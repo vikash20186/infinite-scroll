@@ -1,0 +1,12 @@
+/* Styles go here */
+
+.list-item{
+  height : 50px;
+  overflow : hidden;
+  border-bottom : solid 1px lightblue;
+}
+
+#list-component{
+  height : 500px;
+  overflow : auto;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link data-require="bootstrap-css@*" data-semver="4.0.0-alpha.4" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+    <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <script data-require="lodash.js@*" data-semver="4.16.2" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.2/lodash.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!--<script src="infinite-scroll.js"></script>
+    <script src="script.js"></script>-->
+    <script src="infinite-scroll-without-jquery.js"></script>
+    <script src="script-without-jquery.js"></script>
+  </head>
+
+  <body>
+    <script id="rowTemplate" type="text/template">
+        
+        <% 
+						for(var counter = startIndex; counter<startIndex + length; counter++){
+									var rowItem = dataList[counter];
+									var totalOffset = counter*rowHeight;
+				%>
+								<li class="width-100-per list-item" style="top:<%=totalOffset %>px; position:absolute;" data-indexNumber=<%=counter%>>
+									<div><%= (counter+1) + ") " + rowItem.name + "," + rowItem.company%></div>
+                  <div><%= rowItem.email + "(" + rowItem.phone + ")"%></div>
+								</li>
+				<%}%>
+							
+							
+    </script>
+    
+    <div>
+      Large list below
+      <div id="list-component">
+        <ul id="list-body">
+          
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>
