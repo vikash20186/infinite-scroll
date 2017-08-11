@@ -1,22 +1,22 @@
-#Infinite Scroll Grid
+## Infinite Scroll Grid
 
 General purpose infinite scroll grid, which works any dom structure like table, div, ul li etc...
 
-##Some Key features
+### Some Key features
 1. Keeps only visible rows in the DOM Tree. Hiddens elements are removed to make DOM tree light weight.
 2. Allows to jump from any page to any page. No need to browse pages one by one.
 3. Currently assumes all rows data are loaded in the array before hand, but can be tweaked little bit to support server side pagination. Therefore no need to load the array before hand. Making it possible to support large data range.
 4. Currently uses lodash in the implementation, but can be changed to use pure javascript or some other templating library.
 5. Its super fast, easy to integrate and it works well.
 
-###Demo
+### Demo
 view [demo](http://plnkr.co/edit/3dAtzxTQMr8oXibUWA67?p=preview) on plnkr
 
 
-###dependencies
+#### Dependencies
 uses lodash library for templating. You can modify the source code to change to other templating.
 
-###usage
+### Usage
 1. include lodash library in your script tag, if you are going with default setup.
 2. include infinite-scroll-without-jquery.js in your script tag
 3. You need to supply below inputs to the infinite-scroll library
@@ -26,7 +26,7 @@ uses lodash library for templating. You can modify the source code to change to 
    4. define the template to render reach row. template can be defined as script template, or can be defined inline in javascript, or can be loaded from external javascript file. Anything is fine. You need to supply the string value to the component.
    5. define the dataList. Array of data. Currently it assumes, you have all the rows loaded in the array. You can tweak the renderPageData method to implement server side pagination. In any case, you need to make sure dataList.length returns the total count of the items. this count determines the total height of the component which brings right scrollbar and allows user to jump to any page from any page.
 
-### sample implementation
+### Sample code
 HTML Changes Part1. Template. Sample row element template is below.
 ```
 		<script id="rowTemplate" type="text/template">
@@ -91,5 +91,5 @@ Javascript infinite-scroll set up
 
 ### angular2-infinite-scroll component is also there which is created by tweaking this little bit. You can check it @ [https://github.com/vikash20186/infinite-scroll-angular2](https://github.com/vikash20186/infinite-scroll-angular2)
 
-###Feedback
+##### Feedback
 You can provide feedback, then I can try to take a look. Send all possible along with plnkr, jsfiddle or some online link.
